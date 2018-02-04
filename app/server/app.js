@@ -6,7 +6,8 @@ import router from './router';
 
 const app = express();
 
-//express.static determines the root directory from which all static assets/files will be served.
+// express.static determines the root directory 
+// from which all static assets/files will be served.
 const assets = express.static(path.join(__dirname, '../'));
 
 app.use(cors[]);
