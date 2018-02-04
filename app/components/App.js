@@ -1,4 +1,4 @@
-import React fromt 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Redirect,

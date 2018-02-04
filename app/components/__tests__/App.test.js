@@ -24,7 +24,7 @@ describe('App', () => {
       <StaticRouter context={{}} location={'/pokemon/ability/testing'}>
         <App pokemon={mockPokemon} />
       </StaticRouter>
-    ):
+    );
     expect(component).toMatchSnapshot();
   });
 

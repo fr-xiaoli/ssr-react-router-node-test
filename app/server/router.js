@@ -27,7 +27,6 @@ export default function router(req, res) {
         </StaticRouter>
       );
       res.status(200).send(renderFullPage(html, pokemon));
-      })
     })
     .catch(err => res.status(404).send(
       `${err}: Oh No! I cannot find the tepathic pokemon...maybe they knew we were coming!`
