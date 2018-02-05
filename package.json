@@ -9,22 +9,20 @@
     "build:client": "webpack --config ./webpack.config.js/",
     "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
     "build:prod": "npm run build && npm run build:client",
-    "start": "npm run build:prod && NODE_ENV=production node ./build/server/index.js",
-    "start:dev": "parallelshell 'npm run build:watch' 'npm run build:watch:client' 'nodemon ./build/server/index.js'",
-    "test": "jest --watch --coverage"
+    "start":
+      "npm run build:prod && NODE_ENV=production node ./build/server/index.js",
+    "start:dev":
+      "parallelshell 'npm run build:watch' 'npm run build:watch:client' 'nodemon ./build/server/index.js'",
+    "test": "jest --watch --coverage",
+    "pretty":
+      "prettier --write \"{,!(node_modules|build|coverage)/**/}*.{js,json,jsx,md}\""
   },
   "author": "",
   "license": "ISC",
   "jest": {
-    "testPathIgnorePatterns": [
-      "/build/"
-    ],
-    "modulePathIgnorePatterns": [
-      "/build/"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "testPathIgnorePatterns": ["/build/"],
+    "modulePathIgnorePatterns": ["/build/"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "coverageThreshold": {
       "global": {
         "branches": 90,
@@ -55,6 +53,7 @@
     "jest": "^22.1.4",
     "nodemon": "^1.14.12",
     "parallelshell": "^3.0.2",
+    "prettier": "^1.10.2",
     "react-test-renderer": "^16.2.0",
     "redux-mock-store": "^1.5.1",
     "supertest": "^3.0.0",

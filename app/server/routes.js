@@ -1,7 +1,3 @@
-const routes = [
-  '/',
-  '/pokemon',
-  'pokemon/ability/:ability'
-];
+const routes = ["/", "/pokemon", "pokemon/ability/:ability"];
 
 export default routes;

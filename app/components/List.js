@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function List(props) {
   const { pokemon, location } = props;
@@ -8,11 +8,11 @@ export default function List(props) {
     <div>
       <h3>{ability}</h3>
       <ul>
-        { pokemon.map(poke => {
+        {pokemon.map(poke => {
           const { pokemon } = poke;
-          return <li key={pokemon.name}>{pokemon.name}</li>
+          return <li key={pokemon.name}>{pokemon.name}</li>;
         })}
       </ul>
     </div>
-  )
+  );
 }
