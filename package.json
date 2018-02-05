@@ -9,23 +9,25 @@
     "build:client": "webpack --config ./webpack.config.js/",
     "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
     "build:prod": "npm run build && npm run build:client",
-    "start": "npm run build:prod && NODE_ENV=production node ./build/server/index.js",
-    "start:dev": "parallelshell 'npm run build:watch' 'npm run build:watch:client' 'nodemon ./build/server/index.js'",
-    "test": "jest --watch --coverage",
-    "pretty": "prettier --write \"{,!(node_modules|build|coverage)/**/}*.{js,json,jsx,md}\""
+    "start":
+      "npm run build:prod && NODE_ENV=production node ./build/server/index.js",
+    "start:dev":
+      "parallelshell 'npm run build:watch' 'npm run build:watch:client' 'nodemon ./build/server/index.js'",
+    "test": "jest",
+    "test:watch": "jest --watch --coverage",
+    "pretty":
+      "prettier --write \"{,!(node_modules|build|coverage)/**/}*.{js,json,jsx,md}\"",
+    "precommit": "lint-staged && npm test"
+  },
+  "lint-staged": {
+    "*.js": ["npm run pretty", "git add"]
   },
   "author": "",
   "license": "ISC",
   "jest": {
-    "testPathIgnorePatterns": [
-      "/build/"
-    ],
-    "modulePathIgnorePatterns": [
-      "/build/"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "testPathIgnorePatterns": ["/build/"],
+    "modulePathIgnorePatterns": ["/build/"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "coverageThreshold": {
       "global": {
         "branches": 90,

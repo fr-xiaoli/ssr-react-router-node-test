@@ -11,7 +11,7 @@ jest.mock("../router", () => {
 });
 
 describe("app", () => {
-  it("uses cors", () => {
+  it.only("uses cors", () => {
     return request(app)
       .get("/")
       .then(resp => {
